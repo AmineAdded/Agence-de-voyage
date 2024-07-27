@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Login Form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/Formulaire.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            background-image: url('assets/images/best-01.jpg'), url('assets/images/best-02.jpg'), url('assets/images/best-03.jpg');
+            background-size: cover, cover, cover;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position: left, center, right;
+            
+        }
+
+        .full-container {
+            text-align: center;
+            color: white;
+        }
+
+        .full-container h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .first-button {
+            background-color: #f97352;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5em;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .first-button:hover {
+            background-color: #e16244;
+        }
+
+        #modalContainer {
+            background-color:rgba(0, 0, 0, 0.3);
+            position:absolute;
+            top:0;
+            width:100%;
+            height:100%;
+            left:0px;
+            z-index:10000;
+            background-image:url(tp.png); /* required by MSIE to prevent actions on lower z-index elements */
+        }
+
+        #alertBox {
+            position:relative;
+            width:33%;
+            min-height:100px;
+            max-height:400px;
+            margin-top:50px;
+            border:1px solid #fff;
+            background-color:#fff;
+            background-repeat:no-repeat;
+            top:30%;
+        }
+
+        #modalContainer > #alertBox {
+            position:fixed;
+        }
+
+        #alertBox h1 {
+            margin:0;
+            font:bold 1em Raleway,arial;
+            background-color:#f97352;
+            color:#FFF;
+            border-bottom:1px solid #f97352;
+            padding:10px 0 10px 5px;
+        }
+
+        #alertBox p {
+            height:50px;
+            padding-left:5px;
+            padding-top:30px;
+            text-align:center;
+            vertical-align:middle;
+        }
+
+        #alertBox #closeBtn {
+            display:block;
+            position:relative;
+            margin:10px auto 10px auto;
+            padding:7px;
+            border:0 none;
+            width:70px;
+            text-transform:uppercase;
+            text-align:center;
+            color:#FFF;
+            background-color:#f97352;
+            border-radius: 0px;
+            text-decoration:none;
+            outline:0!important;
+        }
+
+        /* unrelated styles */
+        #mContainer {
+            position:relative;
+            width:600px;
+            margin:auto;
+            padding:5px;
+            border-top:2px solid #fff;
+            border-bottom:2px solid #fff;
+        }
+
+        h1,h2 {
+            margin:0;
+            padding:4px;
+        }
+
+        code {
+            font-size:1.2em;
+            color:#069;
+        }
+
+        #credits {
+            position:relative;
+            margin:25px auto 0px auto;
+            width:350px; 
+            font:0.7em verdana;
+            border-top:1px solid #000;
+            border-bottom:1px solid #000;
+            height:90px;
+            padding-top:4px;
+        }
+
+        #credits img {
+            float:left;
+            margin:5px 10px 5px 0px;
+            border:1px solid #000000;
+            width:80px;
+            height:79px;
+        }
+
+        .important {
+            background-color:#F5FCC8;
+            padding:2px;
+        }
+
+        @media (max-width: 600px) {
+            #alertBox {
+                position:relative;
+                width:90%;
+                top:30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+          <span class="dot"></span>
+          <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    <div class="full-container">
+        <h1>Welcome to our site</h1>
+        <p style="color: white;">Click the button below to log in and explore more.</p>
+        <button onclick="document.getElementById('modal').style.display='block'" class="first-button">Enter</button>
+        <div class="modal" id="modal">
+            <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div class="modal-container">
+                <div class="container">
+                    <!-- Log In form -->
+                    <div class="form-container log-in">
+                        <div class="login-container">
+                            <h1 style="color: black;">Welcome Back!</h1>
+                            <label for="username"><b style="color: black;">Email</b></label>
+                            <input type="text" placeholder="Enter your username or email" name="username" id="email" required>
+                            <label for="psw"><b style="color: black;">Password</b></label>
+                            <input type="password" placeholder="Enter your password" name="psw" id="pswd" required>
+                        </div>
+                        <div class="social">
+                            <a href="#"><i class="fab fa-google"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="button">
+                            <button onclick="submitForm()">Log In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    window.addEventListener("load", function() {
+        // Simulation d'un délai de chargement de 2 secondes avant de cacher le preloader
+        setTimeout(function() {
+            document.getElementById("js-preloader").style.display = "none";
+        }, 2000); // Délai de 2000 millisecondes (2 secondes)
+    });
+
+    function submitForm() {
+        var email = "exemple@example.com";
+        var password = "motdepasse123";
+        
+        var user1 = {
+            email: email,
+            password: password,
+        };
+        
+        var userJSON = JSON.stringify(user1);
+        localStorage.setItem("user1", userJSON);
+
+        var userFromStorage = localStorage.getItem("user1");
+        var parsedUser = JSON.parse(userFromStorage);
+        
+        if (parsedUser.email === document.getElementById('email').value && parsedUser.password === document.getElementById('pswd').value) {
+            window.location.href = "Admin.html";
+        } else {
+            var ALERT_TITLE = "Oops!";
+            var ALERT_BUTTON_TEXT = "Ok";
+
+            if(document.getElementById) {
+                window.alert = function(txt) {
+                    createCustomAlert(txt);
+                }
+            }
+
+            function createCustomAlert(txt) {
+                d = document;
+
+                if(d.getElementById("modalContainer")) return;
+
+                mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+                mObj.id = "modalContainer";
+                mObj.style.height = d.documentElement.scrollHeight + "px";
+                
+                alertObj = mObj.appendChild(d.createElement("div"));
+                alertObj.id = "alertBox";
+                if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+                alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+                alertObj.style.visiblity="visible";
+
+                h1 = alertObj.appendChild(d.createElement("h1"));
+                h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+                msg = alertObj.appendChild(d.createElement("p"));
+                //msg.appendChild(d.createTextNode(txt));
+                msg.innerHTML = txt;
+
+                btn = alertObj.appendChild(d.createElement("a"));
+                btn.id = "closeBtn";
+                btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+                btn.href = "#";
+                btn.focus();
+                btn.onclick = function() { removeCustomAlert();return false; }
+
+                alertObj.style.display = "block";
+                document.querySelector(".full-container").style.display="none";
+            }
+
+            function removeCustomAlert() {
+                document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+                document.querySelector(".full-container").style.display="block";
+            }
+
+            alert('Invalid email or password');
+        }
+    }
+    </script>
+</body>
+</html>

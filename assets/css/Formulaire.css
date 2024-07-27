@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* a
+{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background: #fff;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 18;
+    font-weight: bold;
+    margin: 1em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+
+p {
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+
+label {
+    font-size: 14px;
+    margin: 10px 0 3px 0;
+    text-align: left;
+}
+
+.full-container {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    right: 4em;
+    top: 2em;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    width: 50vw;
+    height: auto;
+    margin: 2em auto;
+    padding: 1em 1.5em;
+    background: #f7f7f7;
+    border: 1px solid #ADADAD;
+    border-radius: 20px;
+}
+
+.login-container {
+    margin-right: 0.75em;
+}
+
+.signup-container {
+    margin-left: 0.75em;
+}
+
+.form-container {
+    flex: 50%;
+    padding: 10px;
+    vertical-align: center;
+}
+
+.log-in {
+    justify-content: center;
+}
+
+input {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    margin: 8px 0;
+    padding: 1em 1.4em;
+    width: 100%;
+}
+
+.checkbox {
+    justify-content: left;
+}
+
+.social{
+    text-align: center;
+    margin: 1em 0;
+    font-size: 2em;
+    
+}
+
+.fa-google {
+    color: #D62D20;
+}
+
+.fa-facebook-f {
+    color:#3B5998;
+    margin: 0 1em;
+
+}
+
+.fa-twitter {
+    color: #00aced;
+}
+
+.button {
+    text-align: center;
+}
+
+button{
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    background: #FF6F05;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 10px;
+    margin: 2em 0;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 150px;
+}
+
+button:hover {
+    background-color: #FF2902;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #5c5c5c;
+    padding: 4em;
+}
+
+@media (max-width: 1172px) {
+    h1 {
+        margin-top: 0.6em;
+        margin-bottom: 0.6em;
+    }
+
+    .container {
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+
+    .log-in {
+        border-bottom: 1px solid #707070;
+    }
+
+    .login-container {
+        margin: 0;
+        padding: 0;
+
+    }
+    
+    .signup-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .log-in {
+        justify-content: center;
+        border-right: none;
+    }
+
+    .social{
+        justify-content: center;
+        text-align: center;
+        margin: 0.3em 0;
+        font-size: 2em;
+        
+    }
+
+    button{
+        display: inline-block;
+        border: none;
+        border-radius: 10px;
+        background: #FF6F05;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 8px 10px;
+        margin-top: 0.8em;
+        letter-spacing: 1px;
+        cursor: pointer;
+        width: 150px;
+    }
+}
+
+
+.js-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+    -webkit-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+  }
+  
+  .js-preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  @-webkit-keyframes dot {
+    50% {
+        -webkit-transform: translateX(96px);
+        transform: translateX(96px);
+    }
+  }
+  
+  @keyframes dot {
+    50% {
+        -webkit-transform: translateX(96px);
+        transform: translateX(96px);
+    }
+  }
+  
+  @-webkit-keyframes dots {
+    50% {
+        -webkit-transform: translateX(-31px);
+        transform: translateX(-31px);
+    }
+  }
+  
+  @keyframes dots {
+    50% {
+        -webkit-transform: translateX(-31px);
+        transform: translateX(-31px);
+    }
+  }
+  
+  .preloader-inner {
+    position: relative;
+    width: 142px;
+    height: 40px;
+    background: transparent;
+  }
+  
+  .preloader-inner .dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    left: 15px;
+    background: #22b3c1;
+    border-radius: 50%;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation: dot 2.8s infinite;
+    animation: dot 2.8s infinite;
+  }
+  
+  .preloader-inner .dots {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    margin-top: 12px;
+    margin-left: 31px;
+    -webkit-animation: dots 2.8s infinite;
+    animation: dots 2.8s infinite;
+  }
+  
+  .preloader-inner .dots span {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    background: #22b3c1;
+    border-radius: 50%;
+  }

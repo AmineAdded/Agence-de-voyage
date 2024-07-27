@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Dashboard.css">
+</head>
+<body>
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <section class="radio-section" id="user-choice-form" style="display: none;">
+        <form id="user-form">
+            <div class="radio-list" id="user-type">
+                <h1>Please choose your identity sir</h1>
+                <div class="radio-item">
+                    <input name="radio" id="radio1" type="radio">
+                    <label for="radio1">Admin</label>
+                </div>
+                <div class="radio-item">
+                    <input name="radio" id="radio2" type="radio">
+                    <label for="radio2">Client</label>
+                </div>
+                <button type="submit" class="btn-2">Submit<i class="fa fa-check"></i></button>
+            </div>
+        </form>
+    </section>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>
